@@ -31,7 +31,7 @@ df= pd.DataFrame(matrix, index=file_names_shortened, columns=file_names_shortene
 #df.to_csv(file_to_save_to)
 
 
-# cluster heat map
+# clustered heat map
 
 # Source:  https://wil.yegelwel.com/cluster-correlation-matrix/
 
