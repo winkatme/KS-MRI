@@ -5,7 +5,7 @@ import os
 # Standardize the ROI Pixel values by dividing by the slice muscle mean.
 # Concat all slice standardized pixel values for each aniamal into one csv file.
 
-dicom_folder_path='Y:\Preclinical\Winkleman\LevineMaestreLiver'
+dicom_folder_path='Y:\DICOM_Files'
 save_file_path='Y:\Path\{i}_concat.csv'
 
 def create_and_populate_ROI_Group_column(df):
