@@ -8,10 +8,10 @@ import os
 ############### Manually Enter #######################
 
 # Path to folder where dicom files are:
-dicom_folder_path='C:\DICOM_Files'
+dicom_folder_path=r'C:\DICOM\DICOM_Files'
 
 # Path to folder where concatenated and standardized files will be saved:
-save_file_path='C:\concatenated'
+save_file_path=r'C:\DICOM\concatenated'
 
 ########################################################
 
