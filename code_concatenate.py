@@ -73,10 +73,7 @@ def standardize_and_concat(dicom_folder_path):
         #print(standardized_slice.head())
         
         del path
-        del df_results
-
-
-        
+        del df_results      
   
 standardize_and_concat(dicom_folder_path)      
    
