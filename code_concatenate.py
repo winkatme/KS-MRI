@@ -5,8 +5,16 @@ import os
 # Standardize the ROI Pixel values by dividing by the slice muscle mean.
 # Concat all slice standardized pixel values for each aniamal into one csv file.
 
-dicom_folder_path='Y:\DICOM_Files'
-save_file_path='Y:\Path\{i}_concat.csv'
+############### Manually Enter #######################
+
+# Path to folder where dicom files are:
+dicom_folder_path='C:\DICOM_Files'
+
+# Path to folder where concatenated and standardized files will be saved:
+save_file_path='C:\concatenated'
+
+########################################################
+
 
 def create_and_populate_ROI_Group_column(df):
     # Create empty 'ROI_Group' column:
@@ -45,8 +53,8 @@ def standardize_and_concat_slices(df):
         del muscle_mean
 
 
-def standardize_and_concat(folder_name):
-    os.chdir(f'dicom_folder_path\{folder_name}')
+def standardize_and_concat(dicom_folder_path):
+    os.chdir(dicom_folder_path)
     for i in os.listdir():
         print(i)
         animal_dir = os.getcwd()+os.sep+i
@@ -59,7 +67,7 @@ def standardize_and_concat(folder_name):
         standardize_and_concat_slices(df_results)
     
         # save file
-        standardized_slice.to_csv(save_file_path, header=None)    
+        standardized_slice.to_csv(save_file_path+f'\{i}_concat.csv', header=None)    
     
         #print(len(standardized_slice))
         #print(standardized_slice.head())
@@ -70,5 +78,5 @@ def standardize_and_concat(folder_name):
 
         
   
-standardize_and_concat(folder_where_DICOM_files_are)      
+standardize_and_concat(dicom_folder_path)      
    
