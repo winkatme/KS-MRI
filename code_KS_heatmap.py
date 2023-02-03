@@ -7,9 +7,18 @@ import pandas as pd
 from tabulate import tabulate
 import os
 
+############### Manually Enter #######################
+
+# Folder where are the concatenated files are located:
 path_to_concatenated_files_folder='Y:\concatenated_files'
+
+# Where to save the ks matrix:
 file_to_save_to='Y:\KS_concat_all_011223.csv'
+
+# Where to save heatmap:
 heatmap_to_save_to='Y:\sorted_heatmap_011323.png'
+
+######################################
 
 # Set working directory
 os.chdir(path_to_concatenated_files_folder)
@@ -28,7 +37,7 @@ file_names_shortened
 
 # To export table as a csv
 df= pd.DataFrame(matrix, index=file_names_shortened, columns=file_names_shortened)
-#df.to_csv(file_to_save_to)
+df.to_csv(file_to_save_to)
 
 
 # clustered heat map
@@ -69,4 +78,4 @@ def cluster_corr(corr_array, inplace=False):
 sns.set(rc={'figure.figsize':(11,10)})
 sorted_heatmap=sns.heatmap(cluster_corr(df))
 sorted_heatmap
-#sorted_heatmap.figure.savefig(heatmap_to_save_to)
+sorted_heatmap.figure.savefig(heatmap_to_save_to)
